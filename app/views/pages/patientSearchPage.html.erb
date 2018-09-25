@@ -11,6 +11,10 @@
    <% if current_user.volunteer_role %>
      <% accessVar = "volunteer" %>
    <% end %>
+   <% if current_user.superadmin_role %>
+     <% accessVar = "admin" %>
+   <% end %>
+
 
 	<div class="container" id="wrapper">
 		<div class="info_boxes" id="info_box1">
@@ -22,8 +26,8 @@
 		</div>
 		
 		<div class="info_boxes" id="info_box2">
-			<div class="patient_box">
-				<form>
+			<div class="patient_box">  
+                 <form>
 					<div class="form-group">
 						<label for="First Name">First Name</label>
 						<input type="text" name="last name" class="form-control" id="firstName" />
@@ -49,11 +53,11 @@
 			</div>
 		</div>
 
-
-
 		<div class="info_boxes" id="info_box3">			
 			<div class="form-group search_button_div">
-				<button type="submit" class="btn btn-default" id="patientSearchBtn">Find Patient</button>
+                <% if !current_user.superadmin_role? %>
+                  <%= link_to "Find Patients", {controller: "patients", action: "index"}, class: "btn btn-small btn-success" %>
+                <% end %>
 			</div>
 		</div>
 	</div>

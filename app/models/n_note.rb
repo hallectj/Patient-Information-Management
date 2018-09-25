@@ -1,0 +1,2 @@
+class NNote < ApplicationRecord
+end

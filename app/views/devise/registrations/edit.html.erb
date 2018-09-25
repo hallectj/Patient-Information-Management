@@ -9,6 +9,11 @@
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
+    
+    <% if can? :update, @user.role %>
+   <%= f.label :role %>
+   <%= f.number_field :role, class: "form-control" %>
+<% end %>
 
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",

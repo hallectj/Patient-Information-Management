@@ -1,0 +1,6 @@
+<%= simple_form_for @patient do |f| %>
+  <%= f.input :first_name, input_html: { class: 'form-control', label: "Patient First Name" } %>
+  <%= f.input :middle_name, input_html: { class: 'form-control', label: "Patient Middle Name"} %>
+  <%= f.input :last_name, input_html: { class: 'form-control', label: "Patient Last Name"} %>
+  <%= f.button :submit, input_html: { class: 'btn btn-small btn-success'}%>
+<% end %>

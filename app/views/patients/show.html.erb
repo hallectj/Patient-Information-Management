@@ -1,0 +1,7 @@
+<h2>Show Page</h2>
+<p><%= @patient.first_name %></p>
+<p><%= @patient.middle_name %></p>
+<p><%= @patient.last_name %></p>
+
+<%= link_to "Edit Patient", edit_patient_path %>
+<%= link_to "Delete Patient", patient_path(@patient), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>

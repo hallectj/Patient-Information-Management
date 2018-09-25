@@ -1,0 +1,2 @@
+class Admittance < ApplicationRecord
+end

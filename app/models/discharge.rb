@@ -1,0 +1,2 @@
+class Discharge < ApplicationRecord
+end
